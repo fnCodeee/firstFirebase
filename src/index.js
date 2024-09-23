@@ -1,13 +1,26 @@
 import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Write from './components/Write/Write'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+const Log = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/firebaseInput",
+    element: <Write />
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider root={Log} />
   </React.StrictMode>
 );
 
